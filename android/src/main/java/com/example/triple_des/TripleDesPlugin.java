@@ -33,8 +33,8 @@ public class TripleDesPlugin implements FlutterPlugin, MethodCallHandler {
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         if (call.method.equals("decrypt3Des")) {
-            String message = call.arguments["message"];
-            String key = call.arguments["key"];
+            String message = call.arguments("message");
+            String key = call.arguments("key");
             final DesedeCrypter crypter = new DesedeCrypter();
 
             String res = crypter.decrypt(message, key);
