@@ -42,8 +42,8 @@ public class TripleDesPlugin implements FlutterPlugin, MethodCallHandler {
             return;
         }
         if (call.method.equals("encrypt3Des")) {
-            String message = call.arguments["message"];
-            String key = call.arguments["key"];
+            String message = call.arguments("message");
+            String key = call.arguments("key");
             final DesedeCrypter crypter = new DesedeCrypter();
 
             String res = crypter.encrypt(message, key);
