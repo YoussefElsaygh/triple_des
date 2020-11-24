@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:triple_des/triple_des.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp( ));
 }
 
 class MyApp extends StatefulWidget {
