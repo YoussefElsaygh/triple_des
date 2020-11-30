@@ -1,6 +1,5 @@
 package com.example.triple_des;
 
-import androidx.annotation.NonNull;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
@@ -25,13 +24,13 @@ public class TripleDesPlugin implements FlutterPlugin, MethodCallHandler {
     private MethodChannel channel;
 
     @Override
-    public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+    public void onAttachedToEngine( FlutterPluginBinding flutterPluginBinding) {
         channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "triple_des");
         channel.setMethodCallHandler(this);
     }
 
     @Override
-    public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
+    public void onMethodCall( MethodCall call,  Result result) {
         if (call.method.equals("decrypt3Des")) {
             String message = call.argument("message");
             String key = call.argument("key");
@@ -53,7 +52,7 @@ public class TripleDesPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     @Override
-    public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    public void onDetachedFromEngine( FlutterPluginBinding binding) {
         channel.setMethodCallHandler(null);
     }
 }
